@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/6b7d429c30.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- screenshot canvas -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <title>My Badge</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inputBadge">
+        <div class="inputname">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            placeholder="Name"
+            id="name"
+            oninput="changeName()"
+          />
+        </div>
+        <div class="inputPicture">
+          <label for="fileInput">Square Photo</label> <br />
+          <input
+            type="file"
+            placeholder="file"
+            id="fileInput"
+            value=""
+            class="file-input"
+          />
+        </div>
+        <div class="inputRoles">
+          <label for="roles">Roles</label>
+          <select name="roles" id="roles">
+            <option value="" disabled selected>Select</option>
+            <option value="accountant">Accountant</option>
+            <option value="teacher">Teacher</option>
+            <option value="student">Student</option>
+            <option value="manager">Manager</option>
+            <option value="asisstant">Assistant</option>
+          </select>
+        </div>
+        <div class="inputColors">
+          <label for="colors">Colors</label>
+          <select name="colors" id="colors">
+            <option value="" disabled selected>Select Color</option>
+            <option value="red">Red > Blue</option>
+            <option value="green">Green > Blue</option>
+            <option value="pink">Pink > Red</option>
+            <option value="gold">Gold > Red</option>
+            <option value="orange">Orange > Yellow</option>
+          </select>
+        </div>
+        <div class="dowloadBadge">
+          <button id="download" onclick="download()">Download Badge</button>
+        </div>
+      </div>
+      <div class="displayBadge" id="displayBadge">
+        <div class="gradientBox" id="gradientBox">
+          <!-- user image displayed -->
+          <div id="userImageBadge"><img id="userImage" src="" alt="" /></div>
+          <div class="inputBox">
+            <div class="roleBadgeBox">
+              <p id="roleBadge">Your Role</p>
+            </div>
+            <div class="nameBox">
+              <h1 id="nameBadge">Your name here</h1>
+              <div class="photoBadge" id="photoBadge"></div>
+            </div>
+            <div class="footerBadgeBox">
+              <img
+                src="https://evbtraining.de/wp-content/uploads/2021/03/evblogo.png"
+                alt=""
+              />
+              <p>EVB Training GmbH</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Js -->
+    <script src="badge.js"></script>
+  </body>
+</html>
